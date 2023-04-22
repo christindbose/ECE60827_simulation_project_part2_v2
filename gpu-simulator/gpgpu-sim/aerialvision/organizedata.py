@@ -231,10 +231,10 @@ def nullOrganizedStackedBar(nullVar, datatype_c):
         for row in range (0,len(organized)):
             newy = array.array(datatype_c, [0 for col in range(newLen)])
             for col in range(0, len(organized[row])):
-                newcol = col / n_data
+                newcol = int(col / n_data)
                 newy[newcol] += organized[row][col]
             for col in range(0, len(newy)):
-                newy[col] /= n_data 
+                newy[col] = int(newy[col]/n_data) 
             organized[row] = newy
 
     return organized
